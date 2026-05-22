@@ -1,0 +1,30 @@
+{
+  "source": "spring8",
+  "updated_at": "2026-05-22T12:17:25+00:00",
+  "proposal_calls": [
+    {
+      "facility": "SPring-8",
+      "call_type": "BLs with biannual calls",
+      "title": "General Proposals and Graduate Student Proposals",
+      "status": "open",
+      "deadline_text": "June 10, 2026, 10:00 am",
+      "deadline_date": "2026-06-10",
+      "deadline_time": "10:00",
+      "timezone": null,
+      "source_url": "https://user.spring8.or.jp/?p=26156&lang=en",
+      "fetched_at": "2026-05-22T12:17:25+00:00"
+    },
+    {
+      "facility": "SPring-8",
+      "call_type": "BLs with sixannual calls",
+      "title": "BLs with sixannual calls: no open call found",
+      "status": "closed",
+      "deadline_text": null,
+      "deadline_date": null,
+      "deadline_time": null,
+      "timezone": null,
+      "source_url": "https://user.spring8.or.jp/?p=26156&lang=en",
+      "fetched_at": "2026-05-22T12:17:25+00:00"
+    }
+  ]
+}

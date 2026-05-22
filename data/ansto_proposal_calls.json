@@ -1,0 +1,18 @@
+{
+  "source": "ansto",
+  "updated_at": "2026-05-22T12:17:26+00:00",
+  "proposal_calls": [
+    {
+      "facility": "ANSTO Australian Centre for Neutron Scattering",
+      "call_type": "ACNS & NDF Merit Access Proposal",
+      "title": "ACNS & NDF Merit Access Proposal",
+      "status": "open",
+      "deadline_text": "15 September 2026 for beamtime & deuteration capabilities between February 2027 - July 2027",
+      "deadline_date": "2026-09-15",
+      "deadline_time": null,
+      "timezone": null,
+      "source_url": "https://www.ansto.gov.au/facilities/australian-centre-for-neutron-scattering/call-for-proposals",
+      "fetched_at": "2026-05-22T12:17:26+00:00"
+    }
+  ]
+}

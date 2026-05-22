@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proposal Deadline Calendar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <h1>Proposal Deadline Calendar</h1>
+      </div>
+      <div class="time-panel" aria-live="polite">
+        <span class="time-label">Current time</span>
+        <strong id="current-time">Loading...</strong>
+      </div>
+    </header>
+
+    <main>
+      <section class="calendar-section" aria-labelledby="calendar-title">
+        <div class="section-bar">
+          <div>
+            <h2 id="calendar-title">Calendar</h2>
+            <p>Deadlines are marked on their submission dates.</p>
+          </div>
+          <div class="calendar-controls">
+            <button id="prev-month" type="button" aria-label="Previous month" title="Previous month">
+              <span aria-hidden="true">&lsaquo;</span>
+            </button>
+            <button id="today-button" type="button">Today</button>
+            <button id="next-month" type="button" aria-label="Next month" title="Next month">
+              <span aria-hidden="true">&rsaquo;</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="calendar-shell">
+          <div class="month-heading">
+            <h3 id="month-label">Month</h3>
+            <div id="month-summary" class="month-summary"></div>
+          </div>
+          <div class="weekday-row" aria-hidden="true">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+          </div>
+          <div id="calendar-grid" class="calendar-grid" role="grid" aria-label="Proposal deadline calendar"></div>
+        </div>
+      </section>
+
+      <section class="deadline-section" aria-labelledby="table-title">
+        <div class="section-bar">
+          <div>
+            <h2 id="table-title">Upcoming Deadlines</h2>
+          </div>
+          <div class="legend" aria-label="Calendar legend">
+            <span><i class="dot open"></i>Open</span>
+            <span><i class="dot closed"></i>Closed / no open call</span>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Facility</th>
+                <th>Call</th>
+                <th>Deadline</th>
+                <th>Distance</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="deadline-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>All DDL times are shown in each facility's local time.</p>
+      <p>by Y. Wang</p>
+    </footer>
+
+    <script src="data/deadline_data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
