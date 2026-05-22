@@ -1,6 +1,10 @@
 {
   "source": "nsls2",
+<<<<<<< HEAD
   "updated_at": "2026-05-28T22:00:31+00:00",
+=======
+  "updated_at": "2026-05-22T13:10:27+00:00",
+>>>>>>> 2aebf4b (Update proposal deadline data)
   "proposal_calls": [
     {
       "facility": "NSLS-II",
@@ -12,7 +16,11 @@
       "deadline_time": "11:59",
       "timezone": null,
       "source_url": "https://www.bnl.gov/nsls2/",
+<<<<<<< HEAD
       "fetched_at": "2026-05-28T22:00:31+00:00"
+=======
+      "fetched_at": "2026-05-22T13:10:27+00:00"
+>>>>>>> 2aebf4b (Update proposal deadline data)
     }
   ]
 }

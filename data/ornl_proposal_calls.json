@@ -1,6 +1,10 @@
 {
   "source": "ornl",
+<<<<<<< HEAD
   "updated_at": "2026-05-28T22:00:24+00:00",
+=======
+  "updated_at": "2026-05-22T13:10:21+00:00",
+>>>>>>> 2aebf4b (Update proposal deadline data)
   "proposal_calls": [
     {
       "facility": "ORNL Neutron Sciences",
@@ -12,7 +16,11 @@
       "deadline_time": "12:00",
       "timezone": "Eastern time",
       "source_url": "https://neutrons.ornl.gov/users/proposal-calls",
+<<<<<<< HEAD
       "fetched_at": "2026-05-28T22:00:24+00:00"
+=======
+      "fetched_at": "2026-05-22T13:10:21+00:00"
+>>>>>>> 2aebf4b (Update proposal deadline data)
     }
   ]
 }
