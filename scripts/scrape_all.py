@@ -10,26 +10,48 @@ from scraper_common import utc_now
 
 
 SCRAPER_JOBS = [
-    ("scripts/scrape_ornl.py", "data/ornl_proposal_calls.json"),
-    ("scripts/scrape_spring8.py", "data/spring8_proposal_calls.json"),
-    ("scripts/scrape_ansto.py", "data/ansto_proposal_calls.json"),
-    ("scripts/scrape_jparc.py", "data/jparc_proposal_calls.json"),
-    ("scripts/scrape_psi.py", "data/psi_proposal_calls.json"),
-    ("scripts/scrape_aps.py", "data/aps_proposal_calls.json"),
-    ("scripts/scrape_nsls2.py", "data/nsls2_proposal_calls.json"),
-    ("scripts/scrape_desy.py", "data/desy_proposal_calls.json"),
-    ("scripts/scrape_isis.py", "data/isis_proposal_calls.json"),
-    ("scripts/scrape_chess.py", "data/chess_proposal_calls.json"),
+    ("ORNL", "scripts/scrape_ornl.py", "data/ornl_proposal_calls.json"),
+    ("SPring-8", "scripts/scrape_spring8.py", "data/spring8_proposal_calls.json"),
+    ("ANSTO", "scripts/scrape_ansto.py", "data/ansto_proposal_calls.json"),
+    ("J-PARC", "scripts/scrape_jparc.py", "data/jparc_proposal_calls.json"),
+    ("PSI", "scripts/scrape_psi.py", "data/psi_proposal_calls.json"),
+    ("APS", "scripts/scrape_aps.py", "data/aps_proposal_calls.json"),
+    ("NSLS-II", "scripts/scrape_nsls2.py", "data/nsls2_proposal_calls.json"),
+    ("DESY", "scripts/scrape_desy.py", "data/desy_proposal_calls.json"),
+    ("ISIS", "scripts/scrape_isis.py", "data/isis_proposal_calls.json"),
+    ("CHESS", "scripts/scrape_chess.py", "data/chess_proposal_calls.json"),
 ]
 
-DATA_FILES = [data_file for _scraper, data_file in SCRAPER_JOBS]
+DATA_FILES = [data_file for _facility, _scraper, data_file in SCRAPER_JOBS]
 
 
-def run_scrapers() -> int:
+def run_scrapers() -> tuple[int, list[dict[str, str | int | bool]]]:
     exit_code = 0
-    for scraper, data_file in SCRAPER_JOBS:
-        result = subprocess.run([sys.executable, scraper], check=False)
+    warnings = []
+    for facility, scraper, data_file in SCRAPER_JOBS:
+        result = subprocess.run(
+            [sys.executable, scraper],
+            check=False,
+            capture_output=True,
+            errors="replace",
+            text=True,
+        )
+        if result.stdout:
+            print(result.stdout, end="")
+        if result.stderr:
+            print(result.stderr, end="", file=sys.stderr)
         if result.returncode:
+            message = last_output_line(result.stderr) or last_output_line(result.stdout) or "Unknown scraper error."
+            warning = {
+                "facility": facility,
+                "script": scraper,
+                "data_file": data_file,
+                "exit_code": result.returncode,
+                "used_existing_data": Path(data_file).exists(),
+                "checked_at": utc_now(),
+                "message": message,
+            }
+            warnings.append(warning)
             if Path(data_file).exists():
                 print(
                     f"Warning: {scraper} failed with exit code {result.returncode}; "
@@ -42,10 +64,15 @@ def run_scrapers() -> int:
                     file=sys.stderr,
                 )
                 exit_code = result.returncode
-    return exit_code
+    return exit_code, warnings
 
 
-def aggregate(output_path: Path) -> None:
+def last_output_line(output: str) -> str | None:
+    lines = [line.strip() for line in output.splitlines() if line.strip()]
+    return lines[-1] if lines else None
+
+
+def aggregate(output_path: Path, warnings: list[dict[str, str | int | bool]]) -> None:
     calls = []
     for file_name in DATA_FILES:
         path = Path(file_name)
@@ -58,6 +85,7 @@ def aggregate(output_path: Path) -> None:
     payload = {
         "source": "all",
         "updated_at": utc_now(),
+        "scrape_warnings": warnings,
         "proposal_calls": calls,
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -81,8 +109,8 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    exit_code = run_scrapers()
-    aggregate(Path(args.output))
+    exit_code, warnings = run_scrapers()
+    aggregate(Path(args.output), warnings)
     print(f"Wrote {args.output}")
     return exit_code
 

@@ -68,7 +68,7 @@ def main() -> int:
     except Exception as exc:
         if Path(args.output).exists():
             print(f"Warning: could not update APS data; keeping existing {args.output}.")
-            return 0
+            return 1
         print(f"Error: {exc}", file=sys.stderr)
         return 1
 

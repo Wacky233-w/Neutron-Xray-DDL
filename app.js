@@ -5,6 +5,7 @@ const state = {
   today: startOfDay(new Date()),
   visibleMonth: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
   calls: [],
+  warnings: [],
   updatedAt: null,
 };
 
@@ -14,6 +15,7 @@ const elements = {
   monthSummary: document.querySelector("#month-summary"),
   calendarGrid: document.querySelector("#calendar-grid"),
   deadlineTable: document.querySelector("#deadline-table"),
+  scrapeWarnings: document.querySelector("#scrape-warnings"),
   prevMonth: document.querySelector("#prev-month"),
   nextMonth: document.querySelector("#next-month"),
   todayButton: document.querySelector("#today-button"),
@@ -65,6 +67,7 @@ async function loadData() {
 function applyPayload(payload) {
   state.updatedAt = payload.updated_at;
   state.calls = normalizeCalls(payload.proposal_calls || []);
+  state.warnings = payload.scrape_warnings || [];
   const nextCall = state.calls.find((call) => call.daysUntil >= 0 && call.deadlineDate);
   if (nextCall) {
     state.visibleMonth = new Date(nextCall.deadlineDate.getFullYear(), nextCall.deadlineDate.getMonth(), 1);
@@ -101,11 +104,45 @@ function sortRank(call) {
 
 function render() {
   renderHeader();
+  renderWarnings();
   renderCalendar();
   renderTable();
 }
 
 function renderHeader() {
+}
+
+function renderWarnings() {
+  if (!elements.scrapeWarnings) return;
+  if (!state.warnings.length) {
+    elements.scrapeWarnings.hidden = true;
+    elements.scrapeWarnings.innerHTML = "";
+    return;
+  }
+
+  elements.scrapeWarnings.hidden = false;
+  elements.scrapeWarnings.innerHTML = `
+    <div class="warning-header">
+      <h2>Needs manual check</h2>
+      <span>${state.warnings.length} scraper issue${state.warnings.length === 1 ? "" : "s"}</span>
+    </div>
+    <ul>
+      ${state.warnings.map(renderWarning).join("")}
+    </ul>
+  `;
+}
+
+function renderWarning(warning) {
+  const status = warning.used_existing_data
+    ? `Existing ${warning.data_file} was kept.`
+    : `No existing ${warning.data_file} was found.`;
+  const reason = warning.message ? ` Reason: ${warning.message}` : "";
+  return `
+    <li>
+      <strong>${escapeHtml(warning.facility || "Unknown facility")}</strong>
+      <span>${escapeHtml(warning.script || "Unknown script")} failed to open or parse the DDL page. ${escapeHtml(status + reason)}</span>
+    </li>
+  `;
 }
 
 function renderCalendar() {
