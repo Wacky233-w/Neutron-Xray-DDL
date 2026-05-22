@@ -66,6 +66,9 @@ def main() -> int:
         call = extract_call(text, args.url)
         write_payload("aps", [call], Path(args.output))
     except Exception as exc:
+        if Path(args.output).exists():
+            print(f"Warning: could not update APS data; keeping existing {args.output}.")
+            return 0
         print(f"Error: {exc}", file=sys.stderr)
         return 1
 

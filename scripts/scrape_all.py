@@ -9,39 +9,39 @@ from pathlib import Path
 from scraper_common import utc_now
 
 
-SCRAPERS = [
-    "scripts/scrape_ornl.py",
-    "scripts/scrape_spring8.py",
-    "scripts/scrape_ansto.py",
-    "scripts/scrape_jparc.py",
-    "scripts/scrape_psi.py",
-    "scripts/scrape_aps.py",
-    "scripts/scrape_nsls2.py",
-    "scripts/scrape_desy.py",
-    "scripts/scrape_isis.py",
-    "scripts/scrape_chess.py",
+SCRAPER_JOBS = [
+    ("scripts/scrape_ornl.py", "data/ornl_proposal_calls.json"),
+    ("scripts/scrape_spring8.py", "data/spring8_proposal_calls.json"),
+    ("scripts/scrape_ansto.py", "data/ansto_proposal_calls.json"),
+    ("scripts/scrape_jparc.py", "data/jparc_proposal_calls.json"),
+    ("scripts/scrape_psi.py", "data/psi_proposal_calls.json"),
+    ("scripts/scrape_aps.py", "data/aps_proposal_calls.json"),
+    ("scripts/scrape_nsls2.py", "data/nsls2_proposal_calls.json"),
+    ("scripts/scrape_desy.py", "data/desy_proposal_calls.json"),
+    ("scripts/scrape_isis.py", "data/isis_proposal_calls.json"),
+    ("scripts/scrape_chess.py", "data/chess_proposal_calls.json"),
 ]
 
-DATA_FILES = [
-    "data/ornl_proposal_calls.json",
-    "data/spring8_proposal_calls.json",
-    "data/ansto_proposal_calls.json",
-    "data/jparc_proposal_calls.json",
-    "data/psi_proposal_calls.json",
-    "data/aps_proposal_calls.json",
-    "data/nsls2_proposal_calls.json",
-    "data/desy_proposal_calls.json",
-    "data/isis_proposal_calls.json",
-    "data/chess_proposal_calls.json",
-]
+DATA_FILES = [data_file for _scraper, data_file in SCRAPER_JOBS]
 
 
 def run_scrapers() -> int:
     exit_code = 0
-    for scraper in SCRAPERS:
+    for scraper, data_file in SCRAPER_JOBS:
         result = subprocess.run([sys.executable, scraper], check=False)
         if result.returncode:
-            exit_code = result.returncode
+            if Path(data_file).exists():
+                print(
+                    f"Warning: {scraper} failed with exit code {result.returncode}; "
+                    f"keeping existing {data_file}.",
+                    file=sys.stderr,
+                )
+            else:
+                print(
+                    f"Error: {scraper} failed and {data_file} does not exist.",
+                    file=sys.stderr,
+                )
+                exit_code = result.returncode
     return exit_code
 
 

@@ -1,6 +1,6 @@
 {
   "source": "desy",
-  "updated_at": "2026-05-22T12:17:43+00:00",
+  "updated_at": "2026-05-22T12:54:44+00:00",
   "proposal_calls": [
     {
       "facility": "DESY Photon Science",
@@ -12,7 +12,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://photon-science.desy.de/users_area/calls__deadlines/index_eng.html",
-      "fetched_at": "2026-05-22T12:17:43+00:00"
+      "fetched_at": "2026-05-22T12:54:44+00:00"
     }
   ]
 }
