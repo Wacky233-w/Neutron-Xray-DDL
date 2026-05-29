@@ -1,21 +1,7 @@
 {
   "source": "all",
-<<<<<<< HEAD
-  "updated_at": "2026-05-28T22:00:36+00:00",
-  "scrape_warnings": [
-    {
-      "facility": "APS",
-      "script": "scripts/scrape_aps.py",
-      "data_file": "data/aps_proposal_calls.json",
-      "exit_code": 1,
-      "used_existing_data": true,
-      "checked_at": "2026-05-28T22:00:30+00:00",
-      "message": "Warning: could not update APS data; keeping existing data/aps_proposal_calls.json."
-    }
-  ],
-=======
-  "updated_at": "2026-05-22T13:10:33+00:00",
->>>>>>> 2aebf4b (Update proposal deadline data)
+  "updated_at": "2026-05-29T00:29:36+00:00",
+  "scrape_warnings": [],
   "proposal_calls": [
     {
       "facility": "J-PARC MLF",
@@ -27,11 +13,7 @@
       "deadline_time": "17:00",
       "timezone": "Japan Time",
       "source_url": "https://mlfinfo.jp/en/user/proposals/2026B/",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:29+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:25+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:27+00:00"
     },
     {
       "facility": "NSLS-II",
@@ -43,11 +25,7 @@
       "deadline_time": "11:59",
       "timezone": null,
       "source_url": "https://www.bnl.gov/nsls2/",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:31+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:27+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:30+00:00"
     },
     {
       "facility": "SPring-8",
@@ -59,11 +37,7 @@
       "deadline_time": "10:00",
       "timezone": null,
       "source_url": "https://user.spring8.or.jp/?p=26156&lang=en",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:25+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:22+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:24+00:00"
     },
     {
       "facility": "Advanced Photon Source",
@@ -75,7 +49,7 @@
       "deadline_time": "14:00",
       "timezone": null,
       "source_url": "https://www.aps.anl.gov/Users-Information/About-Proposals/Apply-for-Time",
-      "fetched_at": "2026-05-24T21:03:20+00:00"
+      "fetched_at": "2026-05-29T00:29:29+00:00"
     },
     {
       "facility": "CHESS",
@@ -87,11 +61,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://www.chess.cornell.edu/users/chess-deadlines",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:36+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:33+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:36+00:00"
     },
     {
       "facility": "ANSTO Australian Centre for Neutron Scattering",
@@ -103,11 +73,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://www.ansto.gov.au/facilities/australian-centre-for-neutron-scattering/call-for-proposals",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:27+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:24+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:25+00:00"
     },
     {
       "facility": "ORNL Neutron Sciences",
@@ -119,11 +85,7 @@
       "deadline_time": "12:00",
       "timezone": "Eastern time",
       "source_url": "https://neutrons.ornl.gov/users/proposal-calls",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:24+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:21+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:22+00:00"
     },
     {
       "facility": "PSI SINQ",
@@ -135,11 +97,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://www.psi.ch/en/sinq/call-for-proposals",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:30+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:26+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:28+00:00"
     },
     {
       "facility": "SPring-8",
@@ -151,11 +109,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://user.spring8.or.jp/?p=26156&lang=en",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:25+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:22+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:24+00:00"
     },
     {
       "facility": "DESY Photon Science",
@@ -167,11 +121,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://photon-science.desy.de/users_area/calls__deadlines/index_eng.html",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:32+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:28+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:31+00:00"
     },
     {
       "facility": "ISIS Neutron and Muon Source",
@@ -183,11 +133,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://isis.stfc.ac.uk/using-isis/academics/how-to-apply/direct-access/",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:35+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:32+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:36+00:00"
     }
   ]
 }

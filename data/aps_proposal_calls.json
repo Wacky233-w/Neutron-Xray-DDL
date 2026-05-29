@@ -1,6 +1,6 @@
 {
   "source": "aps",
-  "updated_at": "2026-05-24T21:03:20+00:00",
+  "updated_at": "2026-05-29T00:29:29+00:00",
   "proposal_calls": [
     {
       "facility": "Advanced Photon Source",
@@ -12,7 +12,7 @@
       "deadline_time": "14:00",
       "timezone": null,
       "source_url": "https://www.aps.anl.gov/Users-Information/About-Proposals/Apply-for-Time",
-      "fetched_at": "2026-05-24T21:03:20+00:00"
+      "fetched_at": "2026-05-29T00:29:29+00:00"
     }
   ]
 }

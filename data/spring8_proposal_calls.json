@@ -1,10 +1,6 @@
 {
   "source": "spring8",
-<<<<<<< HEAD
-  "updated_at": "2026-05-28T22:00:25+00:00",
-=======
-  "updated_at": "2026-05-22T13:10:22+00:00",
->>>>>>> 2aebf4b (Update proposal deadline data)
+  "updated_at": "2026-05-29T00:29:24+00:00",
   "proposal_calls": [
     {
       "facility": "SPring-8",
@@ -16,11 +12,7 @@
       "deadline_time": "10:00",
       "timezone": null,
       "source_url": "https://user.spring8.or.jp/?p=26156&lang=en",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:25+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:22+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:24+00:00"
     },
     {
       "facility": "SPring-8",
@@ -32,11 +24,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://user.spring8.or.jp/?p=26156&lang=en",
-<<<<<<< HEAD
-      "fetched_at": "2026-05-28T22:00:25+00:00"
-=======
-      "fetched_at": "2026-05-22T13:10:22+00:00"
->>>>>>> 2aebf4b (Update proposal deadline data)
+      "fetched_at": "2026-05-29T00:29:24+00:00"
     }
   ]
 }
