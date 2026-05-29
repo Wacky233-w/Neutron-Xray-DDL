@@ -1,18 +1,18 @@
 {
   "source": "chess",
-  "updated_at": "2026-05-29T13:15:17+00:00",
+  "updated_at": "2026-05-29T13:34:07+00:00",
   "proposal_calls": [
     {
       "facility": "CHESS",
       "call_type": "Proposal Deadline",
-      "title": "Proposal Deadline",
+      "title": "2026 Fall Run (2026_3) Proposal Deadline",
       "status": "open",
       "deadline_text": "July 15, 2026",
       "deadline_date": "2026-07-15",
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://www.chess.cornell.edu/users/chess-deadlines",
-      "fetched_at": "2026-05-29T13:15:17+00:00"
+      "fetched_at": "2026-05-29T13:34:07+00:00"
     }
   ]
 }
