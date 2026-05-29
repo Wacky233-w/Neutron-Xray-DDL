@@ -78,7 +78,21 @@ def aggregate(output_path: Path, warnings: list[dict[str, str | int | bool]]) ->
         path = Path(file_name)
         if not path.exists():
             continue
-        payload = json.loads(path.read_text(encoding="utf-8"))
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            warnings.append(
+                {
+                    "facility": facility_name_for_data_file(file_name),
+                    "script": "aggregate",
+                    "data_file": file_name,
+                    "exit_code": 1,
+                    "used_existing_data": False,
+                    "checked_at": utc_now(),
+                    "message": f"Invalid JSON data file: {exc.msg}",
+                }
+            )
+            continue
         calls.extend(payload.get("proposal_calls", []))
 
     calls.sort(key=lambda item: item.get("deadline_date") or "9999-12-31")
@@ -91,6 +105,13 @@ def aggregate(output_path: Path, warnings: list[dict[str, str | int | bool]]) ->
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     write_browser_data(payload, output_path.with_name("deadline_data.js"))
+
+
+def facility_name_for_data_file(file_name: str) -> str:
+    for facility, _scraper, data_file in SCRAPER_JOBS:
+        if data_file == file_name:
+            return facility
+    return file_name
 
 
 def write_browser_data(payload: dict, output_path: Path) -> None:

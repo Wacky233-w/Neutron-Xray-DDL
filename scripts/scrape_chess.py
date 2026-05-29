@@ -22,25 +22,38 @@ SOURCE_URL = "https://www.chess.cornell.edu/users/chess-deadlines"
 
 def extract_call(text: str, source_url: str) -> ProposalCall:
     fetched_at = utc_now()
-    title = "Proposal Deadline"
-    matches = re.finditer(
-        r"Proposal Deadline\s+(?P<deadline>[A-Z][a-z]+\.?\s+\d{1,2},?\s+\d{4})",
-        text,
-        re.IGNORECASE,
+    call_type = "Proposal Deadline"
+    run_matches = list(
+        re.finditer(
+            r"(?P<run>\d{4}\s+(?:Spring|Summer|Fall|Winter)\s+Run\s+\([^)]+\))",
+            text,
+            re.IGNORECASE,
+        )
     )
 
-    future_deadlines: list[tuple[str, str | None, str | None, str | None]] = []
-    for match in matches:
-        deadline_text = normalize_text(match.group("deadline")).strip(" :;-")
+    future_deadlines: list[tuple[str, str, str | None, str | None, str | None]] = []
+    for index, run_match in enumerate(run_matches):
+        next_start = run_matches[index + 1].start() if index + 1 < len(run_matches) else len(text)
+        block = text[run_match.start() : next_start]
+        deadline_match = re.search(
+            r"Proposal Deadline\s+(?P<deadline>[A-Z][a-z]+\.?\s+\d{1,2},?\s+\d{4})",
+            block,
+            re.IGNORECASE,
+        )
+        if not deadline_match:
+            continue
+
+        run_title = normalize_text(run_match.group("run"))
+        deadline_text = normalize_text(deadline_match.group("deadline")).strip(" :;-")
         deadline_date, deadline_time, timezone_label = parse_deadline(deadline_text)
         if is_future_or_today(deadline_date):
-            future_deadlines.append((deadline_text, deadline_date, deadline_time, timezone_label))
+            future_deadlines.append((run_title, deadline_text, deadline_date, deadline_time, timezone_label))
 
     if not future_deadlines:
         return ProposalCall(
             facility="CHESS",
-            call_type=title,
-            title=f"{title}: no open call found",
+            call_type=call_type,
+            title=f"{call_type}: no open call found",
             status="closed",
             deadline_text=None,
             deadline_date=None,
@@ -50,14 +63,14 @@ def extract_call(text: str, source_url: str) -> ProposalCall:
             fetched_at=fetched_at,
         )
 
-    deadline_text, deadline_date, deadline_time, timezone_label = sorted(
-        future_deadlines, key=lambda item: item[1] or "9999-12-31"
+    run_title, deadline_text, deadline_date, deadline_time, timezone_label = sorted(
+        future_deadlines, key=lambda item: item[2] or "9999-12-31"
     )[0]
 
     return ProposalCall(
         facility="CHESS",
-        call_type=title,
-        title=title,
+        call_type=call_type,
+        title=f"{run_title} {call_type}",
         status="open",
         deadline_text=deadline_text,
         deadline_date=deadline_date,

@@ -25,7 +25,7 @@ def extract_calls(text: str, source_url: str) -> list[ProposalCall]:
     calls: list[ProposalCall] = []
     sections = [
         ("BLs with biannual calls", "BLs with sixannual calls"),
-        ("BLs with sixannual calls", "Notes"),
+        ("BLs with sixannual calls", "Throughout the year"),
     ]
 
     for section_title, next_title in sections:
