@@ -1,6 +1,6 @@
 {
   "source": "jparc",
-  "updated_at": "2026-07-04T21:05:20+00:00",
+  "updated_at": "2026-07-05T21:08:46+00:00",
   "proposal_calls": [
     {
       "facility": "J-PARC MLF",
@@ -12,7 +12,7 @@
       "deadline_time": "17:00",
       "timezone": "Japan Time",
       "source_url": "https://mlfinfo.jp/en/user/proposals/2026B/",
-      "fetched_at": "2026-07-04T21:05:20+00:00"
+      "fetched_at": "2026-07-05T21:08:46+00:00"
     }
   ]
 }
