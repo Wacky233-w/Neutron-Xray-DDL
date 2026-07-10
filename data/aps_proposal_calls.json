@@ -1,18 +1,18 @@
 {
   "source": "aps",
-  "updated_at": "2026-05-29T21:57:18+00:00",
+  "updated_at": "2026-07-10T21:11:26+00:00",
   "proposal_calls": [
     {
       "facility": "Advanced Photon Source",
       "call_type": "General User Proposal Call",
       "title": "General User Proposal Call",
       "status": "open",
-      "deadline_text": "June 24, 2026, 14:00/2:00 p.m.",
+      "deadline_text": "June 24, 2026, 14:00/2:00 p",
       "deadline_date": "2026-06-24",
       "deadline_time": "14:00",
       "timezone": null,
       "source_url": "https://www.aps.anl.gov/Users-Information/About-Proposals/Apply-for-Time",
-      "fetched_at": "2026-05-29T21:57:18+00:00"
+      "fetched_at": "2026-07-10T21:11:26+00:00"
     }
   ]
 }
