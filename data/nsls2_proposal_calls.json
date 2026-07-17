@@ -1,6 +1,6 @@
 {
   "source": "nsls2",
-  "updated_at": "2026-07-16T21:08:34+00:00",
+  "updated_at": "2026-07-17T21:01:48+00:00",
   "proposal_calls": [
     {
       "facility": "NSLS-II",
@@ -12,7 +12,7 @@
       "deadline_time": "11:59",
       "timezone": null,
       "source_url": "https://www.bnl.gov/nsls2/",
-      "fetched_at": "2026-07-16T21:08:34+00:00"
+      "fetched_at": "2026-07-17T21:01:48+00:00"
     }
   ]
 }
