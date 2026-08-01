@@ -1,6 +1,6 @@
 {
   "source": "ansto",
-  "updated_at": "2026-07-31T21:13:11+00:00",
+  "updated_at": "2026-08-01T21:02:21+00:00",
   "proposal_calls": [
     {
       "facility": "ANSTO Australian Centre for Neutron Scattering",
@@ -12,7 +12,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://www.ansto.gov.au/facilities/australian-centre-for-neutron-scattering/call-for-proposals",
-      "fetched_at": "2026-07-31T21:13:11+00:00"
+      "fetched_at": "2026-08-01T21:02:21+00:00"
     }
   ]
 }
