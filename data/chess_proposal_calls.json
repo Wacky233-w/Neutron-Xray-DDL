@@ -1,6 +1,6 @@
 {
   "source": "chess",
-  "updated_at": "2026-08-28T04:08:19+00:00",
+  "updated_at": "2026-08-29T02:46:42+00:00",
   "proposal_calls": [
     {
       "facility": "CHESS",
@@ -12,7 +12,7 @@
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://www.chess.cornell.edu/users/chess-deadlines",
-      "fetched_at": "2026-08-28T04:08:19+00:00"
+      "fetched_at": "2026-08-29T02:46:42+00:00"
     }
   ]
 }
