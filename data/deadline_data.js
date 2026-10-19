@@ -1,6 +1,6 @@
 window.PROPOSAL_DEADLINES = {
   "source": "all",
-  "updated_at": "2026-10-18T22:19:18+00:00",
+  "updated_at": "2026-10-19T23:29:50+00:00",
   "scrape_warnings": [
     {
       "facility": "ORNL",
@@ -8,7 +8,7 @@ window.PROPOSAL_DEADLINES = {
       "data_file": "data/ornl_proposal_calls.json",
       "exit_code": 1,
       "used_existing_data": true,
-      "checked_at": "2026-10-18T22:19:07+00:00",
+      "checked_at": "2026-10-19T23:29:38+00:00",
       "message": "Error: Could not find a General User Proposal Call with a deadline sentence."
     },
     {
@@ -17,7 +17,7 @@ window.PROPOSAL_DEADLINES = {
       "data_file": "data/aps_proposal_calls.json",
       "exit_code": 1,
       "used_existing_data": true,
-      "checked_at": "2026-10-18T22:19:13+00:00",
+      "checked_at": "2026-10-19T23:29:43+00:00",
       "message": "Warning: could not update APS data; keeping existing data/aps_proposal_calls.json."
     }
   ],
@@ -32,7 +32,7 @@ window.PROPOSAL_DEADLINES = {
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://www.ansto.gov.au/facilities/australian-centre-for-neutron-scattering/call-for-proposals",
-      "fetched_at": "2026-10-18T22:19:10+00:00"
+      "fetched_at": "2026-10-19T23:29:40+00:00"
     },
     {
       "facility": "ORNL Neutron Sciences",
@@ -68,7 +68,7 @@ window.PROPOSAL_DEADLINES = {
       "deadline_time": "17:00",
       "timezone": "Japan Time",
       "source_url": "https://mlfinfo.jp/en/user/proposals/2027A/",
-      "fetched_at": "2026-10-18T22:19:12+00:00"
+      "fetched_at": "2026-10-19T23:29:41+00:00"
     },
     {
       "facility": "CHESS",
@@ -80,7 +80,7 @@ window.PROPOSAL_DEADLINES = {
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://www.chess.cornell.edu/users/chess-deadlines",
-      "fetched_at": "2026-10-18T22:19:18+00:00"
+      "fetched_at": "2026-10-19T23:29:50+00:00"
     },
     {
       "facility": "PSI SINQ",
@@ -92,7 +92,7 @@ window.PROPOSAL_DEADLINES = {
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://www.psi.ch/en/sinq/call-for-proposals",
-      "fetched_at": "2026-10-18T22:19:13+00:00"
+      "fetched_at": "2026-10-19T23:29:43+00:00"
     },
     {
       "facility": "NSLS-II",
@@ -104,7 +104,7 @@ window.PROPOSAL_DEADLINES = {
       "deadline_time": "11:59",
       "timezone": null,
       "source_url": "https://www.bnl.gov/nsls2/",
-      "fetched_at": "2026-10-18T22:19:14+00:00"
+      "fetched_at": "2026-10-19T23:29:44+00:00"
     },
     {
       "facility": "SPring-8",
@@ -116,7 +116,7 @@ window.PROPOSAL_DEADLINES = {
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://user.spring8.or.jp/?p=26156&lang=en",
-      "fetched_at": "2026-10-18T22:19:08+00:00"
+      "fetched_at": "2026-10-19T23:29:39+00:00"
     },
     {
       "facility": "SPring-8",
@@ -128,7 +128,7 @@ window.PROPOSAL_DEADLINES = {
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://user.spring8.or.jp/?p=26156&lang=en",
-      "fetched_at": "2026-10-18T22:19:08+00:00"
+      "fetched_at": "2026-10-19T23:29:39+00:00"
     },
     {
       "facility": "DESY Photon Science",
@@ -140,7 +140,7 @@ window.PROPOSAL_DEADLINES = {
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://photon-science.desy.de/users_area/calls__deadlines/index_eng.html",
-      "fetched_at": "2026-10-18T22:19:15+00:00"
+      "fetched_at": "2026-10-19T23:29:45+00:00"
     },
     {
       "facility": "ISIS Neutron and Muon Source",
@@ -152,7 +152,7 @@ window.PROPOSAL_DEADLINES = {
       "deadline_time": null,
       "timezone": null,
       "source_url": "https://isis.stfc.ac.uk/using-isis/academics/how-to-apply/direct-access/",
-      "fetched_at": "2026-10-18T22:19:18+00:00"
+      "fetched_at": "2026-10-19T23:29:49+00:00"
     }
   ]
 };
